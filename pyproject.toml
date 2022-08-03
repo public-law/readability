@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "new-dale-chall-readability"
+version = "0.1.0"
+description = "A reimplementation of the New Dale-Chall readability metric. Based on the book, _Readability Revisited, The New Dale-Chall Readability Formula_, (1995) by Chall and Dale."
+authors = ["Robb Shecter <robb@public.law>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-watch = "*"
+black = "*"
+pyright = "*"
+ipython = "*"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pyright]
+ignore = ["**/typings"]
+# As strict as possible: strict mode plus the optional strict checks.
+strict = ["*"]
+reportUninitializedInstanceVariable = "error"
+reportUnusedCallResult = "error"
+reportUnnecessaryTypeIgnoreComment = "error"
+reportPropertyTypeMismatch = "error"
+reportMissingSuperCall = "error"
+reportImplicitStringConcatenation = "error"
+reportCallInDefaultInitializer = "error"
+reportUnusedImport = "warning"
+
+
+[tool.pytest.ini_options]
+minversion = "7.1"
+pythonpath = "."
+python_files = ["*_test.py",]
+python_classes = ["Test", "Describe"]
+python_functions = ["test_", "it_", "and_", "but_", "they_"]
+addopts = "-q --no-header --doctest-modules"
