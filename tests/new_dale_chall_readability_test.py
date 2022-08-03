@@ -21,3 +21,9 @@ class TestReadingLevelFromCloze:
 
     def test_the_upper_bound(self):
         assert reading_level_from_cloze(44.0) == "5-6"
+
+    def test_a_very_difficult_score(self):
+        assert reading_level_from_cloze(11.2) == "16+"
+
+    def test_a_very_easy_score(self):
+        assert reading_level_from_cloze(64.0) == "1"
