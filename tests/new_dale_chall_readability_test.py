@@ -1,4 +1,4 @@
-from new_dale_chall_readability import compute_cloze
+from new_dale_chall_readability.formulas import compute_cloze
 
 
 def test_with_round_numbers():
