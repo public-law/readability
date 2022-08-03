@@ -38,7 +38,17 @@ def reading_level_from_cloze(cloze_score: float) -> ReadingLevel:
     Compute the reading level from the Cloze score.
     """
     for keys in EQUIV_CLOZE_AND_READING_LEVELS:
-        if cloze_score > keys[0] and cloze_score <= keys[1]:
-            return EQUIV_CLOZE_AND_READING_LEVELS[keys]
+        match keys:
+            case (int(min), int(max)):
+                if cloze_score > min and cloze_score <= max:
+                    return EQUIV_CLOZE_AND_READING_LEVELS[keys]
+            case (int(min), None):
+                if cloze_score > min:
+                    return EQUIV_CLOZE_AND_READING_LEVELS[keys]
+            case (None, int(max)):
+                if cloze_score <= max:
+                    return EQUIV_CLOZE_AND_READING_LEVELS[keys]
+            case _:
+                pass
 
     raise ValueError(f"(Unreachable) Cloze score {cloze_score} is out of range.")
