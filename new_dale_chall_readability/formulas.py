@@ -40,3 +40,5 @@ def reading_level_from_cloze(cloze_score: float) -> ReadingLevel:
     for keys in EQUIV_CLOZE_AND_READING_LEVELS:
         if cloze_score > keys[0] and cloze_score <= keys[1]:
             return EQUIV_CLOZE_AND_READING_LEVELS[keys]
+
+    raise ValueError(f"(Unreachable) Cloze score {cloze_score} is out of range.")
