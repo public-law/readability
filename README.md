@@ -5,5 +5,5 @@ their most recent publication (Chall & Dale, 1985).
 
 ## References
 
-Chall, J., & Dale, E. (1985). _Readability revisited: The new Dale-Chall readability formula_.
+Chall, J., & Dale, E. (1995). _Readability revisited: The new Dale-Chall readability formula_.
 Brookline Books.
