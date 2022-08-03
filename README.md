@@ -1,2 +1,9 @@
 # new-dale-chall-readability
-A reimplementation of the New Dale-Chall readability metric. Based on the book, _Readability Revisited, The New Dale-Chall Readability Foruma_, (1995) by Chall and Dale.
+A reimplementation of the New Dale-Chall readability formula. Created using a copy of the
+their most recent publication (Chall & Dale, 1985).
+
+
+## References
+
+Chall, J., & Dale, E. (1985). _Readability revisited: The new Dale-Chall readability formula_.
+Brookline Books.
