@@ -1,12 +1,12 @@
 __version__ = "0.2.0"
 
-
 import re
-from typing import Final
 from .formulas import ReadingLevel, cloze_score, reading_level_from_cloze
 from .easy_words import EASY_WORDS
 
-COMPENSATION_FACTOR = 1.265
+# Compensate for the inaccurate easy word search.
+COMPENSATION_FACTOR_1 = 1.35
+COMPENSATION_FACTOR_2 = 1.23
 
 
 def cloze_score_from_text(text: str) -> float:
@@ -22,17 +22,16 @@ def cloze_score_from_text(text: str) -> float:
     pct_unfamiliar_words = len(unfamiliar_words) / len(words)
     avg_sentence_len = len(words) / len(sentences)
 
-    from devtools import debug
-
-    debug(len(unfamiliar_words))
-
-    return round(
-        COMPENSATION_FACTOR
-        * cloze_score(
-            pct_unfamiliar_words=pct_unfamiliar_words,
-            avg_sentence_length=avg_sentence_len,
-        )
+    raw_score = cloze_score(
+        pct_unfamiliar_words=pct_unfamiliar_words,
+        avg_sentence_length=avg_sentence_len,
     )
+
+    compensation_factor = (
+        COMPENSATION_FACTOR_1 if raw_score < 40 else COMPENSATION_FACTOR_2
+    )
+
+    return compensation_factor * raw_score
 
 
 def reading_level_from_text(text: str) -> ReadingLevel:

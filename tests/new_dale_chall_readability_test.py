@@ -95,10 +95,10 @@ drug did much more than simply
 
 class TestClozeScoreFromText:
     def test_reading_level_3(self):
-        assert cloze_score_from_text(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=1)
+        assert cloze_score_from_text(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=0.1)
 
     def test_reading_level_13_15(self):
-        assert cloze_score_from_text(PSYCHOLOGY_TODAY) == approx(17, abs=1)
+        assert cloze_score_from_text(PSYCHOLOGY_TODAY) == approx(17, abs=0.1)
 
 
 class TestReadingLevelFromText:
