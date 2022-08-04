@@ -4,14 +4,18 @@ import re
 from .formulas import ReadingLevel, cloze_score, reading_level_from_cloze
 from .easy_words import EASY_WORDS
 
+
 # Compensate for the inaccurate easy word search.
-COMPENSATION_FACTOR_1 = 1.35
-COMPENSATION_FACTOR_2 = 1.23
+# In a nutshell, the current code under-counts the number
+# of easy words. A TODO is to get the easy word search
+# closer to the specification.
+COMPENSATION_FACTOR_1 = 1.35  # For lower cloze scores
+COMPENSATION_FACTOR_2 = 1.23  # For higher cloze scores
 
 
 def cloze_score_from_text(text: str) -> float:
     """
-    Calculate the cloze score from the given text.
+    Calculate the text's cloze score.
     """
     cleaned_up_text = text.replace("\n", " ").strip()
     sentences = re.findall(r"\b[^.!?]+[.!?]*", cleaned_up_text, re.UNICODE)
