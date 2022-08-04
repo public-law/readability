@@ -2,7 +2,9 @@
 
 
 # The new Dale-Chall readability formula
-A fresh reimplementation of the formula. Created by referring to a paper copy of
+
+An implementation that follows the specification as closely as
+possible. Created by referring to a paper copy of
 their most recent publication (Chall & Dale, 1995).
 
 
