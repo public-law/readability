@@ -26,10 +26,9 @@ Out[4]: '5-6'
 ```
 
 
-An implementation that closely follows the specification, directly from
-the text. I created it by buying a copy of the most
-recent publication (Chall & Dale, 1995). The code and test cases are
-based directly on the book.
+This implementation closely follows the specification, directly from
+the book's text (Chall & Dale, 1995). The test cases are also directly from the
+book.
 
 
 ## References
