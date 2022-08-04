@@ -2,7 +2,9 @@ import math
 from typing import Any, Literal, TypeAlias
 
 
-def cloze_score(pct_unfamiliar_words: float, avg_sentence_length: float) -> float:
+def compute_cloze_score(
+    pct_unfamiliar_words: float, avg_sentence_length: float
+) -> float:
     """
     Compute the Cloze score (Chall & Dale, 1995, p.66).
     Table 2-1 shows cloze scores rounded to two decimal places. This
@@ -69,3 +71,14 @@ def reading_level_from_cloze(cloze_score: float) -> ReadingLevel:
     bounded_score = max(ARBITRARY_MIN, min(ARBITRARY_MAX, cloze_score))
 
     return EQUIV_CLOZE_AND_READING_LEVELS[bounded_score]
+
+
+def compute_reading_level(
+    pct_unfamiliar_words: float, avg_sentence_length: float
+) -> ReadingLevel:
+    """
+    Compute the reading level.
+    """
+    return reading_level_from_cloze(
+        compute_cloze_score(pct_unfamiliar_words, avg_sentence_length)
+    )

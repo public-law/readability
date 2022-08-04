@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
-version = "0.2.0"
-description = "An implementation of the New Dale-Chall readability metric. Based on the book, Readability Revisited, The New Dale-Chall Readability Formula, (1995) by Chall and Dale."
+version = "1.0.0"
+description = "A re-implementation from scratch of the New Dale-Chall readability metric. It pays special attention to the specifications set by Dale and Chall."
 authors = ["Robb Shecter <robb@public.law>"]
 
 [tool.poetry.dependencies]
@@ -13,6 +13,7 @@ pytest-watch = "*"
 black = "*"
 pyright = "*"
 ipython = "*"
+devtools = "*"
 
 
 [build-system]
