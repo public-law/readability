@@ -1,3 +1,7 @@
+"""
+Adapted from github.com/textstat ... easy_words.txt
+"""
+
 EASY_WORDS = frozenset(
     (
         "a",
