@@ -11,8 +11,8 @@ from .easy_words import EASY_WORDS
 # In a nutshell, the current code under-counts the number
 # of easy words. A TODO is to get the easy word search
 # closer to the specification.
-COMPENSATION_FACTOR_1 = 1.349  # For lower cloze scores
-COMPENSATION_FACTOR_2 = 1.2315  # For higher cloze scores
+_COMPENSATION_FACTOR_1 = 1.349   # For lower cloze scores
+_COMPENSATION_FACTOR_2 = 1.2315  # For higher cloze scores
 
 
 def cloze_score(text: str) -> float:
@@ -34,7 +34,7 @@ def cloze_score(text: str) -> float:
     )
 
     compensation_factor = (
-        COMPENSATION_FACTOR_1 if raw_score < 40 else COMPENSATION_FACTOR_2
+        _COMPENSATION_FACTOR_1 if raw_score < 40 else _COMPENSATION_FACTOR_2
     )
 
     return compensation_factor * raw_score
