@@ -6,6 +6,8 @@ from typing import Final
 from .formulas import cloze_score
 from .easy_words import EASY_WORDS
 
+COMPENSATION_FACTOR = 1.265
+
 
 def cloze_score_from_text(text: str) -> float:
     """
@@ -25,7 +27,7 @@ def cloze_score_from_text(text: str) -> float:
     debug(len(unfamiliar_words))
 
     return round(
-        1.265
+        COMPENSATION_FACTOR
         * cloze_score(
             pct_unfamiliar_words=pct_unfamiliar_words,
             avg_sentence_length=avg_sentence_len,

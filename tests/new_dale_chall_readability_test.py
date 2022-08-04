@@ -56,6 +56,10 @@ class TestReadingLevel:
 
 
 # Reading Level 3 sample text. (Page 146)
+# Sentences: 8
+# Unfamiliar words: 3
+# Clozed score: 53
+# Reading level: "3"
 HIGHLIGHTS_FOR_CHILDREN = """
 Once upon a time a very small witch was walking in the woods. The cold
 wind was blowing the dry leaves all around her. The little witch was
@@ -71,6 +75,10 @@ carried a pair
 """
 
 # Reading level 13-15 sample text. (Page 149)
+# Sentences: 5
+# Unfamiliar words: 35
+# Cloze Score: 17
+# Reading Level: "13-15"
 PSYCHOLOGY_TODAY = """
 Until the 1940's, there were no specific psychiatric drugs. Bromides,
 barbituates, and opiates were known to sedate disturbed patients but
