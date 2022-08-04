@@ -1,8 +1,11 @@
+from pytest import approx
+
 from new_dale_chall_readability.formulas import (
     cloze_score,
     reading_level_from_cloze,
     reading_level,
 )
+from new_dale_chall_readability import cloze_score_from_text
 
 
 class TestClozeScore:
@@ -50,3 +53,27 @@ class TestReadingLevel:
             reading_level(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27)
             == "3"
         )
+
+
+# Reading Level 3 asmple text. (Page 146)
+HIGHLIGHTS_FOR_CHILDREN = """
+Once upon a time a very small witch was walking in the woods. The cold
+wind was blowing the dry leaves all around her. The little witch was
+frantically searching for a house for the winter. She could not find one.
+Suddenly a piece of orange paper, blown by the wind, landed at her feet.
+She picked it up.
+
+The little witch looked closely at the paper and then she said,
+"I shall make myself a little house from this piece of orange paper."
+
+She folded the paper in half. Then she took her scissors (she always
+carried a pair
+"""
+
+
+class TestClozeScoreFromText:
+    def test_reading_level_3(self):
+        assert cloze_score_from_text(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=1)
+
+    # def test_reading_level_13_15(self):
+    #     assert cloze_score_from_text(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=1)
