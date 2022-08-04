@@ -1,4 +1,8 @@
-from new_dale_chall_readability.formulas import cloze_score, reading_level_from_cloze
+from new_dale_chall_readability.formulas import (
+    cloze_score,
+    reading_level_from_cloze,
+    reading_level,
+)
 
 
 def test_with_round_numbers():
@@ -30,3 +34,22 @@ class TestReadingLevelFromCloze:
 
     def test_lower_boundary(self):
         assert reading_level_from_cloze(15) == "16+"
+
+
+class TestReadingLevel:
+    def test_with_round_numbers(self):
+        """
+        Test case extracted from Chall and Dale (1995, page 31, Table 2.1).
+        """
+        assert (
+            reading_level(pct_unfamiliar_words=0.2, avg_sentence_length=10.0) == "7-8"
+        )
+
+    def test_a_higher_result(self):
+        """
+        Test case extracted from Chall and Dale (1995, page 33, Table 2.1).
+        """
+        assert (
+            reading_level(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27)
+            == "3"
+        )

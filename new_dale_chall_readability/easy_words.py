@@ -1,5 +1,5 @@
 """
-Adapted from github.com/textstat ... easy_words.txt
+Adapted from https://github.com/textstat/textstat/blob/master/textstat/resources/en/easy_words.txt
 """
 
 EASY_WORDS = frozenset(
