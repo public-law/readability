@@ -1,25 +1,5 @@
-from typing import Literal, TypeAlias
-
-
-ReadingLevel: TypeAlias = Literal[
-    "1", "2", "3", "4", "5-6", "7-8", "9-10", "11-12", "13-15", "16+"
-]
-
-"""
-See Table 5-8, p. 74.
-"""
-EQUIV_CLOZE_AND_READING_LEVELS: dict[tuple[int | None, int | None], ReadingLevel] = {
-    (57, None): "1",
-    (53, 57): "2",
-    (49, 53): "3",
-    (44, 49): "4",
-    (39, 44): "5-6",
-    (33, 39): "7-8",
-    (27, 33): "9-10",
-    (21, 27): "11-12",
-    (15, 21): "13-15",
-    (None, 15): "16+",
-}
+import math
+from typing import Any, Literal, TypeAlias
 
 
 def cloze_score(pct_unfamiliar_words: float, avg_sentence_length: float) -> float:
@@ -33,22 +13,55 @@ def cloze_score(pct_unfamiliar_words: float, avg_sentence_length: float) -> floa
     return round(raw_result, 2)
 
 
+ReadingLevel: TypeAlias = Literal[
+    "1", "2", "3", "4", "5-6", "7-8", "9-10", "11-12", "13-15", "16+"
+]
+
+
+class RangeDict(dict[range, ReadingLevel]):
+    """
+    A dictionary that maps a range of cloze scores to reading level.
+    """
+
+    def __getitem__(self, item: Any) -> ReadingLevel:
+        """
+        Iterate over the intervals. If the argument is in that interval
+        return its associated value. If not in any interval, raise KeyError.
+        """
+        int_item = math.ceil(item)
+
+        for key in self.keys():
+            if int_item in key:
+                return super().__getitem__(key)
+
+        raise KeyError(item)
+
+
+"""
+See Table 5-8, p. 74.
+"""
+ARBITRARY_MAX = 64
+ARBITRARY_MIN = 10
+EQUIV_CLOZE_AND_READING_LEVELS = RangeDict(
+    {
+        range(57, ARBITRARY_MAX + 1): "1",
+        range(54, 58): "2",
+        range(50, 54): "3",
+        range(45, 50): "4",
+        range(40, 45): "5-6",
+        range(34, 40): "7-8",
+        range(28, 34): "9-10",
+        range(22, 28): "11-12",
+        range(16, 22): "13-15",
+        range(ARBITRARY_MIN, 16): "16+",
+    }
+)
+
+
 def reading_level_from_cloze(cloze_score: float) -> ReadingLevel:
     """
-    Compute the reading level from the Cloze score.
+    Translate the cloze score to a reading level. See: Table 5-8, p. 74.
     """
-    for keys in EQUIV_CLOZE_AND_READING_LEVELS:
-        match keys:
-            case (int(min), int(max)):
-                if cloze_score > min and cloze_score <= max:
-                    return EQUIV_CLOZE_AND_READING_LEVELS[keys]
-            case (int(min), None):
-                if cloze_score > min:
-                    return EQUIV_CLOZE_AND_READING_LEVELS[keys]
-            case (None, int(max)):
-                if cloze_score <= max:
-                    return EQUIV_CLOZE_AND_READING_LEVELS[keys]
-            case _:
-                pass
+    bounded_score = max(ARBITRARY_MIN, min(ARBITRARY_MAX, cloze_score))
 
-    raise ValueError(f"(Unreachable) Cloze score {cloze_score} is out of range.")
+    return EQUIV_CLOZE_AND_READING_LEVELS[bounded_score]

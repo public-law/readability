@@ -27,3 +27,6 @@ class TestReadingLevelFromCloze:
 
     def test_a_very_easy_score(self):
         assert reading_level_from_cloze(64.0) == "1"
+
+    def test_lower_boundary(self):
+        assert reading_level_from_cloze(15) == "16+"
