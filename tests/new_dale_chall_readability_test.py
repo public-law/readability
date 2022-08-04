@@ -55,7 +55,7 @@ class TestReadingLevel:
         )
 
 
-# Reading Level 3 asmple text. (Page 146)
+# Reading Level 3 sample text. (Page 146)
 HIGHLIGHTS_FOR_CHILDREN = """
 Once upon a time a very small witch was walking in the woods. The cold
 wind was blowing the dry leaves all around her. The little witch was
@@ -70,10 +70,24 @@ She folded the paper in half. Then she took her scissors (she always
 carried a pair
 """
 
+# Reading level 13-15 sample text. (Page 149)
+PSYCHOLOGY_TODAY = """
+Until the 1940's, there were no specific psychiatric drugs. Bromides,
+barbituates, and opiates were known to sedate disturbed patients but
+did not reverse the symptoms of severe mental illnesses such as the
+schizophrenias or manic-depressive psychoses. They did ameliorate anxiety,
+but only at the cost of fogging the minds of the recipients, who had to
+decide between being unhappy and being intoxicated. In the 1950's, the
+first specific drug appeared: chlorpromazine (trade name Thorazine). It
+was synthesized when an antihiatamine chemical relative was found to
+sedate surgical patients. However, clinical observations showed that this
+drug did much more than simply
+"""
+
 
 class TestClozeScoreFromText:
     def test_reading_level_3(self):
         assert cloze_score_from_text(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=1)
 
-    # def test_reading_level_13_15(self):
-    #     assert cloze_score_from_text(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=1)
+    def test_reading_level_13_15(self):
+        assert cloze_score_from_text(PSYCHOLOGY_TODAY) == approx(17, abs=1)
