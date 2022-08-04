@@ -17,16 +17,17 @@ def cloze_score_from_text(text: str) -> float:
 
     unfamiliar_words = [w for w in words if w not in EASY_WORDS]
 
-    COMPENSATION_FACTOR = 14 / 3
-
-    pct_unfamiliar_words = len(unfamiliar_words) / COMPENSATION_FACTOR / len(words)
+    pct_unfamiliar_words = len(unfamiliar_words) / len(words)
     avg_sentence_len = len(words) / len(sentences)
 
     from devtools import debug
 
     debug(len(unfamiliar_words))
 
-    return cloze_score(
-        pct_unfamiliar_words=pct_unfamiliar_words,
-        avg_sentence_length=avg_sentence_len,
+    return round(
+        1.265
+        * cloze_score(
+            pct_unfamiliar_words=pct_unfamiliar_words,
+            avg_sentence_length=avg_sentence_len,
+        )
     )
