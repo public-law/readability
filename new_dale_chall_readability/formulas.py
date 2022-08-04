@@ -44,7 +44,7 @@ ARBITRARY_MAX = 64
 ARBITRARY_MIN = 10
 EQUIV_CLOZE_AND_READING_LEVELS = RangeDict(
     {
-        range(57, ARBITRARY_MAX + 1): "1",
+        range(58, ARBITRARY_MAX + 1): "1",
         range(54, 58): "2",
         range(50, 54): "3",
         range(45, 50): "4",
@@ -60,7 +60,7 @@ EQUIV_CLOZE_AND_READING_LEVELS = RangeDict(
 
 def reading_level_from_cloze(cloze_score: float) -> ReadingLevel:
     """
-    Translate the cloze score to a reading level. See: Table 5-8, p. 74.
+    Translate the given cloze score to a reading level. See: Table 5-8, p. 74.
     """
     bounded_score = max(ARBITRARY_MIN, min(ARBITRARY_MAX, cloze_score))
 
