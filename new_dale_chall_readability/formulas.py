@@ -13,6 +13,10 @@ def cloze_score(pct_unfamiliar_words: float, avg_sentence_length: float) -> floa
     return round(raw_result, 2)
 
 
+"""
+Reading levels are enums. They're strings, not integers. See, e.g.:
+Table 5-8, p. 74.
+"""
 ReadingLevel: TypeAlias = Literal[
     "1", "2", "3", "4", "5-6", "7-8", "9-10", "11-12", "13-15", "16+"
 ]
@@ -38,7 +42,7 @@ class RangeDict(dict[range, ReadingLevel]):
 
 
 """
-See Table 5-8, p. 74.
+From Table 5-8, p. 74.
 """
 ARBITRARY_MAX = 64
 ARBITRARY_MIN = 10
