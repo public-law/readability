@@ -3,7 +3,7 @@ __version__ = "0.2.0"
 
 import re
 from typing import Final
-from .formulas import cloze_score
+from .formulas import ReadingLevel, cloze_score, reading_level_from_cloze
 from .easy_words import EASY_WORDS
 
 COMPENSATION_FACTOR = 1.265
@@ -33,3 +33,10 @@ def cloze_score_from_text(text: str) -> float:
             avg_sentence_length=avg_sentence_len,
         )
     )
+
+
+def reading_level_from_text(text: str) -> ReadingLevel:
+    """
+    Calculate the reading level of the given text.
+    """
+    return reading_level_from_cloze(cloze_score_from_text(text))

@@ -5,7 +5,7 @@ from new_dale_chall_readability.formulas import (
     reading_level_from_cloze,
     reading_level,
 )
-from new_dale_chall_readability import cloze_score_from_text
+from new_dale_chall_readability import cloze_score_from_text, reading_level_from_text
 
 
 class TestClozeScore:
@@ -99,3 +99,11 @@ class TestClozeScoreFromText:
 
     def test_reading_level_13_15(self):
         assert cloze_score_from_text(PSYCHOLOGY_TODAY) == approx(17, abs=1)
+
+
+class TestReadingLevelFromText:
+    def test_reading_level_3(self):
+        assert reading_level_from_text(HIGHLIGHTS_FOR_CHILDREN) == "3"
+
+    def test_reading_level_13_15(self):
+        assert reading_level_from_text(PSYCHOLOGY_TODAY) == "13-15"
