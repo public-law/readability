@@ -1,11 +1,11 @@
-from pytest import approx
+from pytest import approx  # type: ignore
 
 from new_dale_chall_readability.formulas import (
-    cloze_score,
+    compute_cloze_score,
     reading_level_from_cloze,
-    reading_level,
+    compute_reading_level,
 )
-from new_dale_chall_readability import cloze_score_from_text, reading_level_from_text
+from new_dale_chall_readability import cloze_score, reading_level
 
 
 class TestClozeScore:
@@ -13,14 +13,17 @@ class TestClozeScore:
         """
         Test case extracted from Chall and Dale (1995, page 31, Table 2.1).
         """
-        assert cloze_score(pct_unfamiliar_words=0.2, avg_sentence_length=10.0) == 38.1
+        assert (
+            compute_cloze_score(pct_unfamiliar_words=0.2, avg_sentence_length=10.0)
+            == 38.1
+        )
 
     def test_a_higher_result(self):
         """
         Test case extracted from Chall and Dale (1995, page 33, Table 2.1).
         """
         assert (
-            cloze_score(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27)
+            compute_cloze_score(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27)
             == 50.99
         )
 
@@ -45,14 +48,22 @@ class TestReadingLevelFromCloze:
 class TestReadingLevel:
     def test_with_round_numbers(self):
         assert (
-            reading_level(pct_unfamiliar_words=0.2, avg_sentence_length=10.0) == "7-8"
+            compute_reading_level(pct_unfamiliar_words=0.2, avg_sentence_length=10.0)
+            == "7-8"
         )
 
     def test_a_higher_result(self):
         assert (
-            reading_level(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27)
+            compute_reading_level(
+                pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27
+            )
             == "3"
         )
+
+
+#
+# Test the High-level API.
+#
 
 
 # Reading Level 3 sample text. (Page 146)
@@ -95,15 +106,15 @@ drug did much more than simply
 
 class TestClozeScoreFromText:
     def test_reading_level_3(self):
-        assert cloze_score_from_text(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=0.1)
+        assert cloze_score(HIGHLIGHTS_FOR_CHILDREN) == approx(53, abs=0.01)
 
     def test_reading_level_13_15(self):
-        assert cloze_score_from_text(PSYCHOLOGY_TODAY) == approx(17, abs=0.1)
+        assert cloze_score(PSYCHOLOGY_TODAY) == approx(17, abs=0.01)
 
 
 class TestReadingLevelFromText:
     def test_reading_level_3(self):
-        assert reading_level_from_text(HIGHLIGHTS_FOR_CHILDREN) == "3"
+        assert reading_level(HIGHLIGHTS_FOR_CHILDREN) == "3"
 
     def test_reading_level_13_15(self):
-        assert reading_level_from_text(PSYCHOLOGY_TODAY) == "13-15"
+        assert reading_level(PSYCHOLOGY_TODAY) == "13-15"

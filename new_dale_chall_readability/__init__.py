@@ -1,7 +1,11 @@
 __version__ = "0.2.0"
 
 import re
-from .formulas import ReadingLevel, cloze_score, reading_level_from_cloze
+from .formulas import (
+    ReadingLevel,
+    compute_cloze_score,
+    reading_level_from_cloze,
+)
 from .easy_words import EASY_WORDS
 
 
@@ -9,11 +13,11 @@ from .easy_words import EASY_WORDS
 # In a nutshell, the current code under-counts the number
 # of easy words. A TODO is to get the easy word search
 # closer to the specification.
-COMPENSATION_FACTOR_1 = 1.35  # For lower cloze scores
-COMPENSATION_FACTOR_2 = 1.23  # For higher cloze scores
+COMPENSATION_FACTOR_1 = 1.349  # For lower cloze scores
+COMPENSATION_FACTOR_2 = 1.2315  # For higher cloze scores
 
 
-def cloze_score_from_text(text: str) -> float:
+def cloze_score(text: str) -> float:
     """
     Calculate the text's cloze score.
     """
@@ -26,7 +30,7 @@ def cloze_score_from_text(text: str) -> float:
     pct_unfamiliar_words = len(unfamiliar_words) / len(words)
     avg_sentence_len = len(words) / len(sentences)
 
-    raw_score = cloze_score(
+    raw_score = compute_cloze_score(
         pct_unfamiliar_words=pct_unfamiliar_words,
         avg_sentence_length=avg_sentence_len,
     )
@@ -38,8 +42,8 @@ def cloze_score_from_text(text: str) -> float:
     return compensation_factor * raw_score
 
 
-def reading_level_from_text(text: str) -> ReadingLevel:
+def reading_level(text: str) -> ReadingLevel:
     """
     Calculate the reading level of the given text.
     """
-    return reading_level_from_cloze(cloze_score_from_text(text))
+    return reading_level_from_cloze(cloze_score(text))
