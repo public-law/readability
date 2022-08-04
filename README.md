@@ -1,4 +1,4 @@
-[![Tests and type-checks](https://github.com/public-law/new-dale-chall-readability/actions/workflows/python-app.yml/badge.svg)](https://github.com/public-law/new-dale-chall-readability/actions/workflows/python-app.yml)
+[![Tests and type-checks](https://github.com/public-law/new-dale-chall-readability/actions/workflows/python-app.yml/badge.svg)](https://github.com/public-law/new-dale-chall-readability/actions/workflows/python-app.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/ef1198fa2d9246aa3c7d/maintainability)](https://codeclimate.com/github/public-law/new-dale-chall-readability/maintainability)
 
 
 # The new Dale-Chall readability formula
@@ -23,8 +23,8 @@ Out[4]: '5-6'
 
 
 An implementation that follows the specification as closely as
-possible. Created by referring to a paper copy of
-their most recent publication (Chall & Dale, 1995).
+possible. Created by referring to a copy of
+the most recent publication (Chall & Dale, 1995).
 
 
 ## References

@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
-version = "1.0.4"
+version = "1.0.5"
 description = "An implementation of the New Dale-Chall readability formula which strictly follows the specification."
 authors = ["Robb Shecter <robb@public.law>"]
 license = "MIT"
 homepage = "https://github.com/public-law/new-dale-chall-readability"
+repository = "https://github.com/public-law/new-dale-chall-readability"
 keywords = ["nlp", "readability", "dale-chall"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
