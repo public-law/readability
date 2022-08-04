@@ -1,6 +1,6 @@
 # new-dale-chall-readability
-A reimplementation of the New Dale-Chall readability formula. Created using a copy of
-their most recent publication (Chall & Dale, 1985).
+A fresh reimplementation of the New Dale-Chall readability formula. Created using a copy of
+their most recent publication (Chall & Dale, 1995).
 
 
 ## References
