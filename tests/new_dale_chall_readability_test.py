@@ -5,18 +5,21 @@ from new_dale_chall_readability.formulas import (
 )
 
 
-def test_with_round_numbers():
-    """
-    Test case extracted from Chall and Dale (1995, page 31, Table 2.1).
-    """
-    assert cloze_score(pct_unfamiliar_words=0.2, avg_sentence_length=10.0) == 38.1
+class TestClozeScore:
+    def test_with_round_numbers(self):
+        """
+        Test case extracted from Chall and Dale (1995, page 31, Table 2.1).
+        """
+        assert cloze_score(pct_unfamiliar_words=0.2, avg_sentence_length=10.0) == 38.1
 
-
-def test_a_higher_result():
-    """
-    Test case extracted from Chall and Dale (1995, page 33, Table 2.1).
-    """
-    assert cloze_score(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27) == 50.99
+    def test_a_higher_result(self):
+        """
+        Test case extracted from Chall and Dale (1995, page 33, Table 2.1).
+        """
+        assert (
+            cloze_score(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27)
+            == 50.99
+        )
 
 
 class TestReadingLevelFromCloze:
@@ -38,17 +41,11 @@ class TestReadingLevelFromCloze:
 
 class TestReadingLevel:
     def test_with_round_numbers(self):
-        """
-        Test case extracted from Chall and Dale (1995, page 31, Table 2.1).
-        """
         assert (
             reading_level(pct_unfamiliar_words=0.2, avg_sentence_length=10.0) == "7-8"
         )
 
     def test_a_higher_result(self):
-        """
-        Test case extracted from Chall and Dale (1995, page 33, Table 2.1).
-        """
         assert (
             reading_level(pct_unfamiliar_words=0.11, avg_sentence_length=100 / 27)
             == "3"

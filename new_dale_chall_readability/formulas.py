@@ -75,9 +75,8 @@ def reading_level(
     pct_unfamiliar_words: float, avg_sentence_length: float
 ) -> ReadingLevel:
     """
-    Compute the reading level from the given parameters.
+    Compute the reading level.
     """
-
     return reading_level_from_cloze(
         cloze_score(pct_unfamiliar_words, avg_sentence_length)
     )
