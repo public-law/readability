@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
 version = "1.0.8"
-description = "An implementation of the New Dale-Chall readability formula which strictly follows the specification."
+description = "An implementation of the New Dale-Chall readability formula which closely follows the specification."
 authors = ["Robb Shecter <robb@public.law>"]
 license = "MIT"
 homepage = "https://github.com/public-law/new-dale-chall-readability"
