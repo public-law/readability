@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
-version = "1.0.8"
+version = "1.0.9"
 description = "An implementation of the New Dale-Chall readability formula which closely follows the specification."
 authors = ["Robb Shecter <robb@public.law>"]
 license = "MIT"
