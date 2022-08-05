@@ -22,7 +22,12 @@ class TestPctUnfamiliarWords:
 
         assert pct_unfamiliar_words(input) == 1.0
 
-    def test_possessive_words(self):
+    def test_possessives(self):
         input = "Dog's dog's dog's."
+
+        assert pct_unfamiliar_words(input) == 0.0
+
+    def test_plural_possessives(self):
+        input = "Dogs' dog's dogs'."
 
         assert pct_unfamiliar_words(input) == 0.0
