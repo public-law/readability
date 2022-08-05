@@ -53,3 +53,4 @@ python_files = ["*_test.py",]
 python_classes = ["Test", "Describe"]
 python_functions = ["test_", "it_", "and_", "but_", "they_"]
 addopts = "-q --no-header --doctest-modules"
+doctest_optionflags = "NUMBER"
