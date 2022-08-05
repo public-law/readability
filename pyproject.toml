@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
-version = "1.0.6"
+version = "1.0.7"
 description = "An implementation of the New Dale-Chall readability formula which strictly follows the specification."
 authors = ["Robb Shecter <robb@public.law>"]
 license = "MIT"
@@ -12,8 +12,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
-    "Topic :: Text Processing :: Linguistic"
-]
+    "Topic :: Text Processing :: Linguistic"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -54,3 +53,4 @@ python_files = ["*_test.py",]
 python_classes = ["Test", "Describe"]
 python_functions = ["test_", "it_", "and_", "but_", "they_"]
 addopts = "-q --no-header --doctest-modules"
+doctest_optionflags = "NUMBER"
