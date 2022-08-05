@@ -21,3 +21,8 @@ class TestPctUnfamiliarWords:
         input = "Deponent deponent deponent."
 
         assert pct_unfamiliar_words(input) == 1.0
+
+    def test_possessive_words(self):
+        input = "Dog's dog's dog's."
+
+        assert pct_unfamiliar_words(input) == 0.0
