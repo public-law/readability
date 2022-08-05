@@ -38,7 +38,7 @@ class TestPctUnfamiliarWords:
         assert pct_unfamiliar_words(input) == 0.0
 
     def test_embedded_year(self):
-        input = "A Dog born in 2020."
+        input = "A dog born in 2020."
 
         assert pct_unfamiliar_words(input) == 0.0
 
