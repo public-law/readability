@@ -1,5 +1,5 @@
-from .utils import avg_sentence_length, pct_unfamiliar_words
 from .formulas import ReadingLevel, compute_cloze_score, reading_level_from_cloze
+from .utils import avg_sentence_length, pct_unfamiliar_words
 
 # Compensate for the inaccurate easy word search.
 # In a nutshell, the current code under-counts the number
