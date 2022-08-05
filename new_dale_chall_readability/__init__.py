@@ -11,7 +11,11 @@ _COMPENSATION_FACTOR_2 = 1.2315  # For higher cloze scores
 
 def cloze_score(text: str) -> float:
     """
-    Calculate the text's cloze score.
+    Compute the text's Cloze score according to the new Dale-Chall
+    formula (Chall & Dale, 1995, p.66).
+
+    Table 2-1 shows cloze scores rounded to two decimal places. This
+    function follows suit.
     """
     raw_score = compute_cloze_score(
         pct_unfamiliar_words=pct_unfamiliar_words(text),
@@ -21,11 +25,12 @@ def cloze_score(text: str) -> float:
         _COMPENSATION_FACTOR_1 if raw_score < 40 else _COMPENSATION_FACTOR_2
     )
 
-    return raw_score * compensation_factor
+    return round(raw_score * compensation_factor, 2)
 
 
 def reading_level(text: str) -> ReadingLevel:
     """
-    Calculate the reading level of the given text.
+    Calculate the text's grade reading level according to the
+    new Dale-Chall formula.
     """
     return reading_level_from_cloze(cloze_score(text))

@@ -1,4 +1,5 @@
 import re
+
 from .easy_words import EASY_WORDS as _EASY_WORDS
 
 
