@@ -31,3 +31,18 @@ class TestPctUnfamiliarWords:
         input = "Dogs' dog's dogs'."
 
         assert pct_unfamiliar_words(input) == 0.0
+
+    def test_embedded_html(self):
+        input = "Dog <em>dog</em> dog."
+
+        assert pct_unfamiliar_words(input) == 0.0
+
+    def test_embedded_year(self):
+        input = "A Dog born in 2020."
+
+        assert pct_unfamiliar_words(input) == 0.0
+
+    def test_embedded_ages(self):
+        input = "A boy or girl aged 14, 15 or 16."
+
+        assert pct_unfamiliar_words(input) == 0.0
