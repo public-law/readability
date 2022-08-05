@@ -5,7 +5,7 @@ from .utils import avg_sentence_length, pct_unfamiliar_words
 # In a nutshell, the current code under-counts the number
 # of easy words. A TODO is to get the easy word search
 # closer to the specification.
-_COMPENSATION_FACTOR_1 = 1.349  # For lower cloze scores
+_COMPENSATION_FACTOR_1 = 1.1725  # For lower cloze scores
 _COMPENSATION_FACTOR_2 = 1.2315  # For higher cloze scores
 
 
