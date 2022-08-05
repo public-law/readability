@@ -1,6 +1,6 @@
 import re
 
-from .easy_words import EASY_WORDS as _EASY_WORDS
+from .utils import pct_unfamiliar_words
 from .formulas import (ReadingLevel, compute_cloze_score,
                        reading_level_from_cloze)
 
@@ -20,13 +20,10 @@ def cloze_score(text: str) -> float:
     sentences = re.findall(r"\b[^.!?]+[.!?]*", cleaned_up_text, re.UNICODE)
     words = [w.lower().strip('.(),"') for w in text.split()]
 
-    unfamiliar_words = [w for w in words if w not in _EASY_WORDS]
-
-    pct_unfamiliar_words = len(unfamiliar_words) / len(words)
     avg_sentence_len = len(words) / len(sentences)
 
     raw_score = compute_cloze_score(
-        pct_unfamiliar_words=pct_unfamiliar_words,
+        pct_unfamiliar_words=pct_unfamiliar_words(text),
         avg_sentence_length=avg_sentence_len,
     )
 
