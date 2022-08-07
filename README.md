@@ -69,7 +69,7 @@ So why create another one?
 * Use Test-Driven Development to squash bugs and prevent regressions.
 * [Turn examples from the book into test cases](https://github.com/public-law/new-dale-chall-readability/blob/master/tests/integration_test.py).
 * Write with modern Python. I'm no expert, so I'm learning as I go along. E.g., 
-  * It passes Pyright strict-mode type-checking.
+  * It passes [Pyright strict-mode type-checking](https://github.com/public-law/new-dale-chall-readability/blob/master/pyproject.toml#L36-L47).
   * It uses recent type enhancements like `Literal`.
 * Present a very easy API to use in any app or library.
   * No need to instantiate an object and learn its API.
