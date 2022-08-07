@@ -4,7 +4,7 @@
 
 # The new Dale-Chall readability formula
 
-I wrote this by ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. I used it to code the library from scratch. 
+I wrote this by ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. I used the book to code the library from scratch. 
 
 
 **Installation:**
