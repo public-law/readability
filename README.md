@@ -3,10 +3,15 @@
 
 # The new Dale-Chall readability formula
 
-In a nutshell:
+To install it:
 
 ```bash
-pip install new-dale-chall-readability
+$ pip install new-dale-chall-readability
+```
+
+Let's try it out:
+```bash
+$ ipython
 ```
 
 ```python
@@ -18,11 +23,11 @@ In [2]: text = (
    ...:     'a party to, the case.'
    ...:     )
 
-In [3]: cloze_score(text)
-Out[3]: 42.46652
+In [3]: reading_level(text)
+Out[3]: '7-8'
 
-In [4]: reading_level(text)
-Out[4]: '5-6'
+In [4]: cloze_score(text)
+Out[4]: 36.91
 ```
 
 
