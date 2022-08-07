@@ -43,7 +43,7 @@ higher cloze score is more readable. They "range from 58 and above for the easie
 **Reading level** is the grade level of the material, in years of education. The scale is from
 **1** to **16+**.
 
-See the integration test file for text samples from the book, along with their scores. 
+See [the integration test file](https://github.com/public-law/new-dale-chall-readability/blob/master/tests/integration_test.py) for text samples from the book, along with their scores. 
 
 
 ## Why yet another Dale-Chall readability library?
