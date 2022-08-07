@@ -9,6 +9,13 @@ def compute_cloze_score(
     Compute the Cloze score (Chall & Dale, 1995, p.66).
     Table 2-1 shows cloze scores rounded to two decimal places. This
     function follows suit.
+
+    The text gives the formula as:
+
+    "Dale-Chall cloze = 64 - .95 unfamiliar words - .69 average sentence length"
+
+    The only change here is 95 instead of .95 to allow a more conventional 
+    percentage between zero and one.
     """
     raw_result = 64 - (95 * pct_unfamiliar_words) - (0.69 * avg_sentence_length)
 
