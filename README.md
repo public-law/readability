@@ -30,10 +30,14 @@ In [4]: cloze_score(text)
 Out[4]: 36.91
 ```
 
+## Why yet another readability library?
 
-This implementation closely follows the specification, directly from
-the book's text (Chall & Dale, 1995). The test cases are also directly from the
-book.
+* Dale-Chall.
+* They all seem to have issues.
+* Test-driven development.
+* Purchase a copy of Chall & Dale's _Readability Revisited_ and use it to implement the library from scratch.
+* Use examples from the book as test cases.
+
 
 
 ## References
