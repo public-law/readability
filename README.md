@@ -1,9 +1,10 @@
 [![Tests and type-checks](https://github.com/public-law/new-dale-chall-readability/actions/workflows/python-app.yml/badge.svg)](https://github.com/public-law/new-dale-chall-readability/actions/workflows/python-app.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/ef1198fa2d9246aa3c7d/maintainability)](https://codeclimate.com/github/public-law/new-dale-chall-readability/maintainability)
 
 
+
 # The new Dale-Chall readability formula
 
-To install it:
+Installation:
 
 ```bash
 $ pip install new-dale-chall-readability
@@ -30,14 +31,20 @@ In [4]: cloze_score(text)
 Out[4]: 36.91
 ```
 
+
 ## Why yet another readability library?
+
+It's 2022. There are probably a half-dozen Dale-Chall implementations in Python on PyPI.
+Why create another one?
 
 * Dale-Chall.
 * They all seem to have issues.
 * Test-driven development.
-* Purchase a copy of Chall & Dale's _Readability Revisited_ and use it to implement the library from scratch.
 * Use examples from the book as test cases.
-
+* Modern Python.
+* Maintainable coding practices.
+* Very easy API to use in any app or library.
+* Purchase a copy of Chall & Dale's _Readability Revisited_ and use it to implement the library from scratch.
 
 
 ## References

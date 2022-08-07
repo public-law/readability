@@ -66,7 +66,7 @@ class TestReadingLevel:
 #
 
 
-# Reading Level 3 sample text. (Page 146)
+# Reading level 3 sample text (page 146)
 # Sentences: 8
 # Unfamiliar words: 3
 # Clozed score: 53
@@ -85,7 +85,15 @@ She folded the paper in half. Then she took her scissors (she always
 carried a pair
 """
 
-# Reading level 13-15 sample text. (Page 149)
+class TestSampleTextLevel3:
+    def test_cloze_score(self):
+        assert cloze_score(HIGHLIGHTS_FOR_CHILDREN) == approx(53.0, abs=0.01)
+
+    def test_reading_level(self):
+        assert reading_level(HIGHLIGHTS_FOR_CHILDREN) == "3"
+
+
+# Reading level 13-15 sample text (page 149).
 # Sentences: 5
 # Unfamiliar words: 35
 # Cloze Score: 17
@@ -103,18 +111,9 @@ sedate surgical patients. However, clinical observations showed that this
 drug did much more than simply
 """
 
-
-class TestClozeScoreFromText:
-    def test_reading_level_3(self):
-        assert cloze_score(HIGHLIGHTS_FOR_CHILDREN) == approx(53.0, abs=0.01)
-
-    def test_reading_level_13_15(self):
+class TestSampleTextLevel13_15:
+    def test_cloze_score(self):
         assert cloze_score(PSYCHOLOGY_TODAY) == approx(17.0, abs=0.01)
 
-
-class TestReadingLevelFromText:
-    def test_reading_level_3(self):
-        assert reading_level(HIGHLIGHTS_FOR_CHILDREN) == "3"
-
-    def test_reading_level_13_15(self):
+    def test_reading_level(self):
         assert reading_level(PSYCHOLOGY_TODAY) == "13-15"
