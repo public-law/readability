@@ -32,19 +32,32 @@ Out[4]: 36.91
 ```
 
 
-## Why yet another readability library?
+## Why yet another Dale-Chall readability library?
 
-It's 2022. There are probably a half-dozen Dale-Chall implementations in Python on PyPI.
-Why create another one?
+It's 2022. There are probably a half-dozen implementations on PyPI.
+So why create another one?
 
-* Dale-Chall.
 * They all seem to have issues.
-* Test-driven development.
-* Use examples from the book as test cases.
-* Modern Python.
-* Maintainable coding practices.
-* Very easy API to use in any app or library.
-* Purchase a copy of Chall & Dale's _Readability Revisited_ and use it to implement the library from scratch.
+  * For example, from my reading of the book, I realized that **reading level** is a set of
+    ten "buckets" and and each one has a name. 
+    E.g., there's "3" and "7-8". 
+    The existing libraries I found treat these as floating point numbers. 
+    But now I believe that an enumeration — or specifically,
+    a [Literal](https://docs.python.org/3/library/typing.html#typing.Literal) — captures the formula better:
+    `Literal["1", "2", "3", "4", "5-6", "7-8", "9-10", "11-12", "13-15", "16+"]`
+* Use Test-Driven Development to squash bugs and prevent regressions.
+* Turn examples from the book into test cases.
+* Write with modern Python. I'm no expert, so I'm learning as I go along. E.g., 
+  * It passes Pyright strict-mode type-checking.
+  * It uses recent type enhancements like `Literal`.
+* It should have a very easy API to use in any app or library.
+  * No need to instantiate an object and learn its API.
+  * Just import the needed function and call it.
+
+And so I decided to re-think the library from the ground-up. I ordered a copy of Chall & Dale's _Readability Revisited_ and used it to write the library from scratch. It's been a great
+experience: the book is well written with lots of details of the scientific validation
+done by the authors. The bonus surprise was the sample texts
+where are perfect as Pytest test cases.
 
 
 ## References

@@ -1,4 +1,4 @@
-from pytest import approx  # type: ignore
+from pytest import approx  # type: ignore   (Pyright doesn't like approx().)
 
 from new_dale_chall_readability.formulas import (
     compute_cloze_score,
@@ -6,6 +6,9 @@ from new_dale_chall_readability.formulas import (
     compute_reading_level,
 )
 
+"""
+Unit tests for the library.
+"""
 
 class TestClozeScore:
     def test_with_round_numbers(self):
@@ -28,6 +31,10 @@ class TestClozeScore:
 
 
 class TestReadingLevelFromCloze:
+    """
+    Test the library's ability to convert a floating point
+    cloze score into one of the 10 string reading levels.
+    """
     def test_a_lowest_bound(self):
         assert reading_level_from_cloze(39.01) == "5-6"
 
@@ -44,7 +51,11 @@ class TestReadingLevelFromCloze:
         assert reading_level_from_cloze(15) == "16+"
 
 
-class TestReadingLevel:
+class TestComputeReadingLevel:
+    """
+    This function didn't end up getting used in the higher-level code.
+    TODO: Possibly delete this function and the tests.
+    """
     def test_with_round_numbers(self):
         assert (
             compute_reading_level(pct_unfamiliar_words=0.2, avg_sentence_length=10.0)
