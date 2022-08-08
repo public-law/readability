@@ -3,10 +3,10 @@ from new_dale_chall_readability import cloze_score, reading_level
 
 
 """
-Test the high-level API for end-users. Luckily, _Readability Revisited_
-provides great test cases in the form of sample passages that have been
-scored by the authors. These tests use the samples directly to make
-sure the library gives the expected output.
+_Readability Revisited_ provides great test cases in the form of
+sample passages that have been scored by the authors. These tests
+use the samples directly to verify that the code gives the expected
+output.
 """
 
 
