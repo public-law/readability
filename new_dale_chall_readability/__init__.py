@@ -23,13 +23,12 @@ def cloze_score(text: str) -> float:
         avg_sentence_length=avg_sentence_length(text),
     )
 
-    match raw_score:
-        case s if s >= 40:
-            comp = _COMPENSATION_FACTOR_2
-        case s if s > 0:
-            comp = _COMPENSATION_FACTOR_1
-        case _:
-            comp = _COMPENSATION_FACTOR_0
+    if raw_score >= 40:
+        comp = _COMPENSATION_FACTOR_2
+    elif raw_score > 0:
+        comp = _COMPENSATION_FACTOR_1
+    else:
+        comp = _COMPENSATION_FACTOR_0
 
     return round(raw_score * comp, 2)
 
