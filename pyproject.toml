@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
-version = "1.0.10"
+version = "1.0.11"
 description = "An implementation of the New Dale-Chall readability formula that closely follows the specification."
 authors = ["Robb Shecter <robb@public.law>"]
 license = "MIT"
@@ -15,9 +15,11 @@ classifiers = [
     "Topic :: Text Processing :: Linguistic"]
 readme = "README.md"
 
+
 [tool.poetry.dependencies]
 python = "^3.10"
 beautifulsoup4 = "*"
+
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
