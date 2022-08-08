@@ -3,7 +3,7 @@ from new_dale_chall_readability import cloze_score, reading_level
 
 
 """
-Test the High-level API for end-users. Luckily, _Readability Revisited_
+Test the high-level API for end-users. Luckily, _Readability Revisited_
 provides great test cases in the form of sample passages that have been
 scored by the authors. These tests use the samples directly to make
 sure the library gives the expected output.
@@ -71,24 +71,28 @@ class TestSampleTextLevel_13_15:
 #   Number of Unfamiliar words: 37
 #   Cloze Score: -6
 #   Reading Level: "16+"
-HARVARD_EDUCATIONAL_REVIEW = """
+HARVARD_ED_REV = """
 Further support for the view that educational expansion would reduce
 inequalities was derived from the dualistic nature of developing
-societies.
-The economic structures of developing societies were said to consist of
-two sectors: a traditional sector that uses little capital, is relatively
-unproductive, does not require an educated labor force, and places a great
-emphasis on subsistence farming, small workshops and small commercial
-enterprises: and a modern sector that uses advanced technology and capital,
-is far more productive, and requires a labor force with at least some
-schooling.
-Expanding the educational system would qualify more workers for jobs where
-demands
+societies. The economic structures of developing societies were said to 
+consist of two sectors: a traditional sector that uses little capital,
+is relatively unproductive, does not require an educated labor force,
+and places a great emphasis on subsistence farming, small workshops and
+small commercial enterprises: and a modern sector that uses advanced
+technology and capital, is far more productive, and requires a labor
+force with at least some schooling. Expanding the educational system 
+would qualify more workers for jobs where demands
 """
 
 class TestSampleTextLevel_16_plus:
     def test_cloze_score(self):
-        assert cloze_score(HARVARD_EDUCATIONAL_REVIEW) == approx(-6.0, abs=0.01)
+        assert cloze_score(HARVARD_ED_REV) == approx(-6.0, abs=0.01)
 
     def test_reading_level(self):
-        assert reading_level(HARVARD_EDUCATIONAL_REVIEW) == "16+"
+        assert reading_level(HARVARD_ED_REV) == "16+"
+
+
+# References
+#
+# Chall, J., & Dale, E. (1995). _Readability revisited: The new Dale-Chall readability formula_.
+# Brookline Books.
