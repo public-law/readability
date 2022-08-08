@@ -10,10 +10,11 @@ sure the library gives the expected output.
 """
 
 
-# Reading level 3 sample text (page 146):
-#   Sentences: 8
-#   Unfamiliar words: 3
-#   Clozed score: 53
+# Reading level 3 (Chall & Dale, page 146):
+#   Number of Words in Sample: 100
+#   Number of Whole Sentences: 8
+#   Number of Unfamiliar words: 3
+#   Cloze score: 53
 #   Reading level: "3"
 HIGHLIGHTS_FOR_CHILDREN = """
 Once upon a time a very small witch was walking in the woods. The cold
@@ -37,9 +38,10 @@ class TestSampleTextLevel3:
         assert reading_level(HIGHLIGHTS_FOR_CHILDREN) == "3"
 
 
-# Reading level 13-15 sample text (page 149):
-#   Sentences: 5
-#   Unfamiliar words: 35
+# Reading level 13-15 (Chall & Dale, page 149):
+#   Number of Words in Sample: 100
+#   Number of Whole Sentences: 5
+#   Number of Unfamiliar words: 35
 #   Cloze Score: 17
 #   Reading Level: "13-15"
 PSYCHOLOGY_TODAY = """
@@ -61,3 +63,25 @@ class TestSampleTextLevel13_15:
 
     def test_reading_level(self):
         assert reading_level(PSYCHOLOGY_TODAY) == "13-15"
+
+
+# Reading Level 16+ (Chall & Dale, p. 150).
+#   Number of Words in Sample: 100
+#   Number of Whole Sentences: 2
+#   Number of Unfamiliar words: 37
+#   Cloze Score: -6
+#   Reading Level: "16+"
+HARVARD_EDUCATIONAL_REVIEW = """
+Further support for the view that educational expansion would reduce
+inequalities was derived from the dualistic nature of developing
+societies.
+The economic structures of developing societies were said to consist of
+two sectors: a traditional sector that uses little capital, is relatively
+unproductive, does not require an educated labor force, and places a great
+emphasis on subsistence farming, small workshops and small commercial
+enterprises: and a modern sector that uses advanced technology and capital,
+is far more productive, and requires a labor force with at least some
+schooling.
+Expanding the educational system would qualify more workers for jobs where
+demands
+"""
