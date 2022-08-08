@@ -2,9 +2,9 @@ from .formulas import ReadingLevel, compute_cloze_score, reading_level_from_cloz
 from .utils import avg_sentence_length, pct_unfamiliar_words
 
 # Compensate for the inaccurate easy word search.
-# In a nutshell, the current code under-counts the number
-# of easy words. A TODO is to get the easy word search
-# closer to the specification.
+# TODO: get the easy word search closer to the specification
+# so that lower — or no — compensation factors are needed.
+#
 _COMPENSATION_FACTOR_0 = 1.305   # For ultra-low cloze scores
 _COMPENSATION_FACTOR_1 = 1.1725  # For lower cloze scores
 _COMPENSATION_FACTOR_2 = 1.2315  # For higher cloze scores

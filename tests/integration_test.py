@@ -16,6 +16,7 @@ sure the library gives the expected output.
 #   Number of Unfamiliar words: 3
 #   Cloze score: 53
 #   Reading level: "3"
+#
 HIGHLIGHTS_FOR_CHILDREN = """
 Once upon a time a very small witch was walking in the woods. The cold
 wind was blowing the dry leaves all around her. The little witch was
@@ -44,6 +45,7 @@ class TestSampleTextLevel_3:
 #   Number of Unfamiliar words: 35
 #   Cloze Score: 17
 #   Reading Level: "13-15"
+#
 PSYCHOLOGY_TODAY = """
 Until the 1940's, there were no specific psychiatric drugs. Bromides,
 barbituates, and opiates were known to sedate disturbed patients but
@@ -71,6 +73,7 @@ class TestSampleTextLevel_13_15:
 #   Number of Unfamiliar words: 37
 #   Cloze Score: -6
 #   Reading Level: "16+"
+#
 HARVARD_ED_REV = """
 Further support for the view that educational expansion would reduce
 inequalities was derived from the dualistic nature of developing
@@ -83,24 +86,6 @@ technology and capital, is far more productive, and requires a labor
 force with at least some schooling. Expanding the educational system 
 would qualify more workers for jobs where demands
 """
-
-# "schooling" and "workshop[s]" are easy words according to the text but
-# are not in easy_words.py.
-#
-# Checking with the book, it's the same as the python file:
-#
-# "schooling" is not in the easy words list on p. 26. "school" is, though.
-# "workshop" is not in the list (p. 29). "work" is. (?)
-#
-# On p. 16 is the note:
-#
-# "Consider as known words on the list with endings indicated in
-#  parentheses and words with the following endings, even though
-#  they are not noted in parentheses:
-#    -'s, -s, -es, -ies; -d, -ed, -ied, -ing; -r, -er, -est, -ier, -est
-#
-#  (For further instructions, see pages 13–15.)"
-#
 class TestSampleTextLevel_16_plus:
     def test_cloze_score(self):
         assert cloze_score(HARVARD_ED_REV) == approx(-6.0, abs=0.01)
