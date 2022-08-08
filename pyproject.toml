@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
-version = "1.0.11"
-description = "An implementation of the New Dale-Chall readability formula that closely follows the specification."
+version = "1.0.12"
+description = "Implements the New Dale-Chall readability formula. Its output is tested against samples from the original publication."
 authors = ["Robb Shecter <robb@public.law>"]
 license = "MIT"
 homepage = "https://github.com/public-law/new-dale-chall-readability"
@@ -12,7 +12,11 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
-    "Topic :: Text Processing :: Linguistic"]
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed"]
 readme = "README.md"
 
 
