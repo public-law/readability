@@ -30,7 +30,7 @@ She folded the paper in half. Then she took her scissors (she always
 carried a pair
 """
 
-class TestSampleTextLevel3:
+class TestSampleTextLevel_3:
     def test_cloze_score(self):
         assert cloze_score(HIGHLIGHTS_FOR_CHILDREN) == approx(53.0, abs=0.01)
 
@@ -57,7 +57,7 @@ sedate surgical patients. However, clinical observations showed that this
 drug did much more than simply
 """
 
-class TestSampleTextLevel13_15:
+class TestSampleTextLevel_13_15:
     def test_cloze_score(self):
         assert cloze_score(PSYCHOLOGY_TODAY) == approx(17.0, abs=0.01)
 
@@ -85,3 +85,10 @@ schooling.
 Expanding the educational system would qualify more workers for jobs where
 demands
 """
+
+class TestSampleTextLevel_16_plus:
+    def test_cloze_score(self):
+        assert cloze_score(HARVARD_EDUCATIONAL_REVIEW) == approx(-6.0, abs=0.01)
+
+    def test_reading_level(self):
+        assert reading_level(HARVARD_EDUCATIONAL_REVIEW) == "16+"
