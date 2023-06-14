@@ -31,10 +31,16 @@ In [2]: text = (
 
 In [3]: reading_level(text)
 Out[3]: '7-8'
+```
 
+So, it's grade 7–8 reading level. 
+
+```python
 In [4]: cloze_score(text)
 Out[4]: 36.91
 ```
+
+And yep, the 36.91 cloze score says it's moderately difficult.
 
 ## What's a "cloze score" and "reading level"?
 
