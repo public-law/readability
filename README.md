@@ -54,7 +54,7 @@ See [the integration test file](https://github.com/public-law/new-dale-chall-rea
 
 ## Why yet another readability library?
 
-Before creating this, I tried really to find a readability library that gave correct results, and also seemed to be a good algorithm. I realized I really like Dale-Chall. But I found show-stopping bugs in the existing libraries that cause them to give wrong answers.
+Before creating this, I tried really hard to find a readability library that gave correct results, and also seemed to be a good algorithm. I realized I really like Dale-Chall. But I found show-stopping bugs in the existing libraries that cause them to give wrong answers.
 
 There are a ton of low-effort blog posts about Dale-Chall: they all seem to have different ideas about how it works. So I wrote this by first ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. Then I used the book to code the library from scratch. My goal was to create the best library I could for analyzing text. It needs to start with giving correct results. I did my best to rigorously design and test the code. And secondly, it needs to be modern Python code that's super easy to use. So, no objects to instantiate and no odd module naming. Just a couple of functions which can be called.
 
