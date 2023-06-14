@@ -6,7 +6,7 @@
 
 **Easily and accurately calculate a text's readability.**
 
-I wrote this by ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. I used the book to code the library from scratch. My goal was to create the best library I could for analyzing text.
+I wrote this by ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. I used the book to code the library from scratch. My goal was to create the best library I could for analyzing text. It needs to start with giving correct results. I did my best to rigorously design and test the code.
 
 
 **Installation:**
