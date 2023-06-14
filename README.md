@@ -8,13 +8,13 @@
 
 
 
-**Installation:**
+## Installation:
 
 ```bash
 $ pip install new-dale-chall-readability
 ```
 
-**Let's try it out:**
+## Let's try it out:
 
 ```bash
 $ ipython
