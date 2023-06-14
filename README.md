@@ -42,7 +42,7 @@ Out[4]: 36.91
 
 _And yep, the 36.91 cloze score says it's moderately difficult._
 
-So how is this useful? Well, here's how I use the above result:
+So how is this useful? Well, [here's how I use the above result](https://www.public.law/dictionary/entries/amicus-curiae):
 
 <img width="458" alt="Screenshot 2023-06-14 at 4 31 18 PM" src="https://github.com/public-law/new-dale-chall-readability/assets/150670/8fb35c94-881a-4654-b48c-9d73ed914737">
 
