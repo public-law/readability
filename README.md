@@ -46,7 +46,7 @@ So how is this useful? Well, [here's how I use the above result](https://www.pub
 
 <img width="458" alt="Screenshot 2023-06-14 at 4 31 18 PM" src="https://github.com/public-law/new-dale-chall-readability/assets/150670/8fb35c94-881a-4654-b48c-9d73ed914737">
 
-My international legal dictionary orders entries from simplest to most complex. The numeric cloze score as the sort key.
+My international legal dictionary orders entries from simplest to most complex. I coded the numeric cloze score as the sort key.
 
 
 
