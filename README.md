@@ -4,7 +4,7 @@
 
 # The new Dale-Chall readability formula
 
-Easily, correctly, calculate a text's readability.
+**Easily, correctly, calculate a text's readability.**
 
 I wrote this by ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. I used the book to code the library from scratch. My goal was to create the best library I could for analyzing text.
 
