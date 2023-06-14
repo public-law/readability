@@ -37,8 +37,8 @@ Out[4]: 36.91
 
 ## What's a "cloze score" and "reading level"?
 
-**Cloze** is a deletion test invented by Taylor (1953). The **36.91** score, above, means that roughly that 37% of the words could be deleted and the passage could still be understood. So, a
-higher cloze score is more readable. They "range from 58 and above for the easiest passages to 10-15 and below for the most difficult" (Chall & Dale, p. 75).
+**Cloze** is a deletion test invented by Taylor (1953). The `36.91` score, above, means that roughly that 37% of the words could be deleted and the passage could still be understood. So, **a
+higher cloze score is more readable**. They "range from 58 and above for the easiest passages to 10-15 and below for the most difficult" (Chall & Dale, p. 75).
 
 **Reading level** is the grade level of the material, in years of education. The scale is from
 **1** to **16+**.
