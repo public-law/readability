@@ -6,7 +6,9 @@
 
 **Easily and accurately calculate a text's readability.**
 
-I wrote this by ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. I used the book to code the library from scratch. My goal was to create the best library I could for analyzing text. It needs to start with giving correct results. I did my best to rigorously design and test the code.
+Before creating this, I tried really to find a readability library that gave correct results, and also seemed to be a good algorithm. I realized I really like Dale-Chall. But I found show-stopping bugs in the existing libraries. 
+
+There's a ton of low-effort content about Dale-Chall, and they all seem to have different ideas of how it works. So I wrote this by first ordering a copy of _Readability Revisited: The new Dale-Chall readability formula_. Then I used the book to code the library from scratch. My goal was to create the best library I could for analyzing text. It needs to start with giving correct results. I did my best to rigorously design and test the code. And secondly, it needs to be modern Python code that's easy to use.
 
 
 **Installation:**
