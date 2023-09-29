@@ -2,7 +2,7 @@
 
 
 
-# The new Dale-Chall readability formula
+# Determine the grade level of a piece of text
 
 **Easily and accurately calculate a text's readability.**
 
