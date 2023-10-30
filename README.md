@@ -2,7 +2,7 @@
 
 
 
-# Determine the grade level of a piece of text
+# Calculate the grade level of a piece of text
 
 **Easily and accurately calculate a text's readability.**
 
