@@ -1,6 +1,12 @@
 import re
+import warnings
+
 from bs4 import BeautifulSoup
 from .easy_words import EASY_WORDS as _EASY_WORDS
+
+# Ignore MarkupResemblesLocatorWarning and other user warnings
+# because this is library code.
+warnings.filterwarnings("ignore", category=UserWarning, module="bs4")
 
 
 def pct_unfamiliar_words(text: str) -> float:
