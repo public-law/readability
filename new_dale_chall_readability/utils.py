@@ -32,8 +32,6 @@ def _words(in_text: str) -> tuple[str, ...]:
 
 
 def _is_unfamiliar(word: str) -> bool:
-    match word:
-        case number if re.match(r"\d+$", number):
-            return False
-        case _:
-            return word not in _EASY_WORDS
+    if word.isdigit():  # Faster and simpler check for pure numbers
+        return False
+    return word not in _EASY_WORDS
