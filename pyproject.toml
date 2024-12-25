@@ -1,22 +1,23 @@
 [tool.poetry]
 name = "new-dale-chall-readability"
-version = "1.0.12"
+version = "1.0.13"
 description = "Implements the New Dale-Chall readability formula. Its output is tested against samples from the original publication."
 authors = ["Robb Shecter <robb@public.law>"]
 license = "MIT"
-homepage = "https://github.com/public-law/new-dale-chall-readability"
-repository = "https://github.com/public-law/new-dale-chall-readability"
+homepage = "https://github.com/public-law/readability"
+repository = "https://github.com/public-law/readability"
 keywords = ["nlp", "readability", "dale-chall"]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Topic :: Text Processing :: Linguistic",
-    "Typing :: Typed"]
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Text Processing :: Linguistic",
+  "Typing :: Typed",
+]
 readme = "README.md"
 
 
@@ -56,7 +57,7 @@ reportUnusedImport = "warning"
 [tool.pytest.ini_options]
 minversion = "7.1"
 pythonpath = "."
-python_files = ["*_test.py",]
+python_files = ["*_test.py"]
 python_classes = ["Test", "Describe"]
 python_functions = ["test_", "it_", "and_", "but_", "they_"]
 addopts = "-q --no-header --doctest-modules"
