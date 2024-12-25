@@ -32,6 +32,31 @@ def _words(in_text: str) -> tuple[str, ...]:
 
 
 def _is_unfamiliar(word: str) -> bool:
-    if word.isdigit():  # Faster and simpler check for pure numbers
+    """
+    Determine if a word is considered unfamiliar according to the Dale-Chall formula.
+    
+    A word is considered familiar if it is either:
+    1. A number (e.g., "2020", "15")
+    2. Present in the Dale-Chall list of familiar words
+    
+    The Dale-Chall list contains approximately 3,000 words that were empirically 
+    determined to be familiar to most fourth-grade students.
+    
+    Args:
+        word: A single word, stripped of punctuation and converted to lowercase
+        
+    Returns:
+        bool: True if the word is unfamiliar, False if familiar
+        
+    Examples:
+        >>> _is_unfamiliar("dog")  # In easy word list
+        False
+        >>> _is_unfamiliar("2020")  # A number
+        False
+        >>> _is_unfamiliar("raconteur")  # Not in easy word list
+        True
+    """
+    if word.isdigit():
         return False
+        
     return word not in _EASY_WORDS
