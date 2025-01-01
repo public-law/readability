@@ -20,6 +20,9 @@ def pct_unfamiliar_words(text: str) -> float:
 def avg_sentence_length(text: str) -> float:
     cleaned_up_text = text.replace("\n", " ").strip()
     sentences = re.findall(r"\b[^.!?]+[.!?]*", cleaned_up_text, re.UNICODE)
+    #prevents division of zero error
+    if not sentences:
+        return 0.0
     words = _words(text)
 
     return len(words) / len(sentences)
@@ -32,6 +35,7 @@ def _words(in_text: str) -> tuple[str, ...]:
 
 
 def _is_unfamiliar(word: str) -> bool:
+
     """
     Determine if a word is considered unfamiliar according to the Dale-Chall formula.
     
