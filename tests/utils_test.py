@@ -47,7 +47,13 @@ class TestPctUnfamiliarWords:
 
         assert pct_unfamiliar_words(input) == 0.0
 
-    def test_divide_0(self):
+    def test_divide_0_words(self):
+        input = " "
+
+        assert pct_unfamiliar_words(input) == 0.0
+
+class TestAvgSentenceLength:
+    def test_divide_0_sentences(self):
         input = " "
 
         assert avg_sentence_length(input) == 0.0
