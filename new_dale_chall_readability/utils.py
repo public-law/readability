@@ -19,6 +19,8 @@ def pct_unfamiliar_words(text: str) -> float:
     step3: returns the percentage by dividing the length of unfamiliar words by words.
     """
     words = _words(text)
+    if not words:
+        return 0.0
     no_possesives = (w.replace("'s", "").replace("s'", "") for w in words)
     unfamiliar_words = [w for w in no_possesives if _is_unfamiliar(w)]
 
