@@ -1,4 +1,4 @@
-from new_dale_chall_readability.utils import pct_unfamiliar_words
+from new_dale_chall_readability.utils import pct_unfamiliar_words, avg_sentence_length
 
 
 class TestPctUnfamiliarWords:
