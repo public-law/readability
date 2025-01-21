@@ -46,3 +46,8 @@ class TestPctUnfamiliarWords:
         input = "A boy or girl aged 14, 15 or 16."
 
         assert pct_unfamiliar_words(input) == 0.0
+
+    def test_divide_0(self):
+        input = " "
+
+        assert avg_sentence_length(input) == 0.0
